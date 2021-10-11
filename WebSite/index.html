@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Convert an image into an assembly script, which can be parsed by your program from Assignment 4 of CSE1400 2021/22">
+
+    <title>Image Assemblifier | rstular</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&text=file_upload" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="page-wrap">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <!-- <a class="/projects/">
+                            Projects
+                        </a> -->
+                    </div>
+
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-dark" href="https://github.com/rstular/image-assemblifier">Github</a>
+                                <!-- <a class="button is-link">Download</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero is-medium is-link">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="title is-1">
+                        Image Assemblifier
+                    </p>
+                    <p class="subtitle">
+                        Convert your image to an assembly script (CSE1400 Assignment 4)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="file has-name is-boxed is-justify-content-center">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="resume" accept="image/*" id="file-input">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <span class="material-icons-outlined">
+                                file_upload
+                            </span>
+                        </span>
+                        <span class="file-label">
+                            Choose an image…
+                        </span>
+                    </span>
+                    <span class="file-name" id="file-name"></span>
+                </label>
+            </div>
+            <br />
+            <div id="num-cols" class="field is-horizontal center-margin">
+                <div class="field-label is-normal">
+                    <label class="label">Width</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input id="num-cols-input" class="input" type="number" placeholder="Number of columns in the image (default 100)" value="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <div class="control ">
+                <button id="generate-btn" class="button is-link" disabled>Generate assembly</button>
+            </div>
+        </section>
+    </div>
+
+    <footer id="global-footer" class="footer level">
+
+        <div class="level-item has-text-centered">
+            <p>
+                Want more features? Message me on Discord: <strong>ludisuzuki#7040</strong>
+            </p>
+        </div>
+        <div class="level-item has-text-centered">
+            <p>
+                &copy; <a href="https://github.com/rstular/">rstular</a>, 2021
+            </p>
+        </div>
+    </footer>
+
+    <div id="the-modal" class="modal">
+        <div id="modal-bg" class="modal-background"></div>
+        <div class="modal-content">
+            <div id="modal-content-container" class="notification is-danger">
+                <button id="modal-content-close" class="delete"></button>
+                <span id="modal-content-text">Primar lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.
+                    Vestibulum rhoncus ac ex sit amet fringilla.
+                    Nullam gravida purus diam, et dictum
+                    felis venenatis efficitur.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js" async></script>
+    <script src="FileSaver.js" type="module" async></script>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
